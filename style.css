@@ -1,0 +1,278 @@
+/* Загальні стилі */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: 'Merriweather', serif;
+  background: #f0f0f0;
+  color: #333;
+}
+
+/* Шапка */
+header {
+  background: #004080;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  height: 100px;
+  margin-right: 20px;
+}
+
+header h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2em;
+}
+
+/* Меню */
+nav {
+  background: #0066cc;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav a.active {
+  color: #ffcc00;
+}
+
+/* Головний блок із фоном */
+.hero {
+  position: relative;         
+  overflow: hidden;           /* обрізає фон, щоб не було скролів */
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 253px); /* екран мінус шапка+меню */
+  box-sizing: border-box;
+}
+
+.hero h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.6em;
+}
+
+.hero p {
+  font-size: 1.2em;
+}
+
+/* Фон через псевдоелемент */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -5%; left: -5%; right: -5%; bottom: -5%; /* запас, щоб не створював скрол */
+  background: url("sumy.jpg") center/cover no-repeat;
+  transition: transform 0.5s ease;
+  z-index: -1;               
+  will-change: transform;    
+}
+
+.hero:hover::before {
+  transform: scale(1.05);    /* збільшення тільки фону */
+}
+
+/* Футер */
+footer {
+  background: #004080;
+  color: white;
+  text-align: center;
+  padding: 16px;                 /* трохи менше відступів, щоб не тягнув сторінку */
+  font-family: 'Poppins', sans-serif; /* той самий шрифт, що й у меню */
+  font-size: 0.90em;             /* менший розмір, ніж у меню */
+  font-weight: normal;           /* нежирний */
+  line-height: 1.4;              /* комфортна висота рядка */
+}
+
+
+
+/* 📱 Адаптація для телефонів */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+  .hero h2 {
+    font-size: 2em;
+  }
+  .hero p {
+    font-size: 1em;
+  }
+  .logo {
+    height: 80px;
+  }
+}
+
+/* Відео-блок */
+.video-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 30px;
+  background: url('sky.jpg') no-repeat center center;
+  background-size: cover;
+  min-height: calc(100vh - 305px); /* екран мінус шапка+меню+футер */
+  border-radius: 0;
+}
+
+video {
+  width: 700px;
+  max-width: 90%;
+  height: auto;
+  border: 4px solid #004080; /* синя товста рамка */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+nav a.active {
+  display: none;
+}
+
+/* Стилі для карти */
+.video-card iframe {
+  width: 700px;          /* ширина карти */
+  height: 400px;         /* висота карти */
+  border: 4px solid #004080; /* синя товста рамка */
+  border-radius: 8px;     /* закруглені кути */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* легка тінь */
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Загальний стиль меню */
+nav {
+  background: linear-gradient(90deg, #1e3c72, #2a5298);
+  padding: 10px;
+  }
+
+
+/* Посилання */
+nav a {
+  color: #f1f1f1;
+  text-decoration: none;
+  margin: 0 12px;
+  font-family: 'Poppins', sans-serif;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+/* Ефект при наведенні */
+nav a:hover {
+  color: #ffd700; /* золотистий */
+}
+
+/* Випадаюче меню */
+.dropdown-content {
+  background-color: #2a5298;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  color: #f1f1f1;
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: #1e3c72;
+  color: #ffd700;
+}
+
+nav a,
+nav span.menu-item {
+  color: white;              /* той самий колір */
+  text-decoration: none;     /* без підкреслення */
+  padding: 8px 12px;         /* відступи */
+  font-family: 'Poppins', sans-serif; /* той самий шрифт */
+  cursor: pointer;           /* щоб було відчуття клікабельності */
+}
+
+nav span.menu-item:hover {
+  background-color: #34495e; /* ефект при наведенні */
+  border-radius: 4px;
+}
+
+nav a,
+nav span.menu-item {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;   /* однакова жирність */
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url("sumy.jpg") center/cover no-repeat;
+  transition: transform 0.5s ease;
+  z-index: -1; /* фон позаду тексту */
+}
+
+.hero:hover::before {
+  transform: scale(1.05); /* збільшення тільки фону */
+}
+
+
+
