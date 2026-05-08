@@ -262,7 +262,7 @@ nav span.menu-item {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: url("sumy.jpg") center/cover no-repeat;
+  background: url("sumy.webp") center/cover no-repeat;
   transition: transform 0.5s ease;
   z-index: -1; /* фон позаду тексту */
 }
