@@ -289,6 +289,43 @@ nav a:hover,
   cursor: pointer;    /* щоб було видно, що елемент активний */
 }
 
+/* Базові стилі для логотипа */
+.logo {
+  width: 120px;
+  height: auto;
+}
+
+/* Адаптивність для мобільних */
+@media (max-width: 600px) {
+  header .logo-title {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo {
+    width: 80px; /* менший логотип для мобільних */
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a, nav .menu-item {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .hero h2 {
+    font-size: 22px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+}
 
 
 
