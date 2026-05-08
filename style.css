@@ -242,11 +242,6 @@ nav span.menu-item {
   cursor: pointer;           /* щоб було відчуття клікабельності */
 }
 
-nav span.menu-item:hover {
-  background-color: #34495e; /* ефект при наведенні */
-  border-radius: 4px;
-}
-
 nav a,
 nav span.menu-item {
   display: inline-block;
