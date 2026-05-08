@@ -242,6 +242,8 @@ nav span.menu-item {
   cursor: pointer;           /* щоб було відчуття клікабельності */
 }
 
+
+
 nav a,
 nav span.menu-item {
   display: inline-block;
@@ -268,6 +270,26 @@ nav span.menu-item {
 .hero:hover::before {
   transform: scale(1.05); /* збільшення тільки фону */
 }
+
+.logo {
+  width: 120px;   /* бажана ширина на десктопі */
+  height: auto;   /* висота автоматично підлаштовується */
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 80px;  /* менша ширина для мобільних */
+    height: auto;
+  }
+}
+
+nav a:hover,
+.menu-item:hover {
+  color: goldenrod;   /* або інший відтінок золота */
+  cursor: pointer;    /* щоб було видно, що елемент активний */
+}
+
+
 
 
 
