@@ -351,4 +351,10 @@ img {
   }
 }
 
+@media (max-width: 600px) {
+  .hero {
+    min-height: 300px;
+    padding: 20px;
+  }
+}
 
