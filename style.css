@@ -130,16 +130,20 @@ footer {
 
 /* Відео-блок */
 .video-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 30px;
-  background: url('sky.jpg') no-repeat center center;
-  background-size: cover;
-  min-height: calc(100vh - 305px); /* екран мінус шапка+меню+футер */
-  border-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 30px;
+    background-image: url('sky.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: calc(100vh - 305px); /* екран мінус шапка+меню+футер */
+    border-radius: 0;
 }
+
+
 
 video {
   width: 700px;
