@@ -23,12 +23,12 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 20px; /* відстань між гербом і текстом */
 }
 
 .logo {
   width: 80px;
   height: auto;
-  margin-right: 12px; /* відступ від тексту */
   vertical-align: middle;
 }
 
@@ -57,13 +57,12 @@ nav span.menu-item {
   transition: color 0.3s, background-color 0.3s;
 }
 
-/* Підсвічування меню одним кольором */
 nav a:hover,
 nav a:focus,
 nav a:active,
 nav a.active,
 .menu-item:hover {
-  color: #FFD700; /* яскраво-жовтий */
+  color: #FFD700;
   text-decoration: none;
 }
 
@@ -92,33 +91,22 @@ nav a.active,
 }
 
 /* Фон */
-.hero {
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-  color: white;
-  min-height: calc(100vh - 253px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .hero-bg {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* замінює background-size: cover */
-  z-index: -1;
+  object-fit: cover;
+  z-index: 0; /* фон видно */
+  transition: transform 0.5s ease;
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 1; /* текст поверх */
 }
 
-.hero:hover::before {
+.hero:hover .hero-bg {
   transform: scale(1.05);
 }
 
@@ -130,7 +118,6 @@ footer {
   padding: 16px;
   font-family: 'Poppins', sans-serif;
   font-size: 0.90em;
-  font-weight: normal;
   line-height: 1.4;
 }
 
@@ -139,14 +126,12 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
   padding: 30px;
   background-image: url('sky.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   min-height: calc(100vh - 305px);
-  border-radius: 0;
 }
 
 video {
@@ -180,7 +165,7 @@ video {
   border-radius: 6px;
   min-width: 220px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 9999; /* меню завжди поверх */
 }
 
 .dropdown-content a {
@@ -224,13 +209,11 @@ video {
     text-align: center;
   }
   header {
-    height: auto;
     padding: 10px;
   }
   .hero {
     min-height: 300px;
     padding: 20px;
-    text-align: center;
   }
   nav a, nav .menu-item {
     padding: 10px;
@@ -252,29 +235,4 @@ video {
 img {
   max-width: 100%;
   height: auto;
-}
-
-.hero-bg {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  transition: transform 0.5s ease;
-}
-
-.hero:hover .hero-bg {
-  transform: scale(1.05); /* тепер працює на <img> */
-}
-
-.logo-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px; /* відстань між гербом і текстом */
-}
-
-.dropdown-content {
-  z-index: 9999; /* меню завжди поверх */
 }
