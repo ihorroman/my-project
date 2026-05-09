@@ -236,3 +236,30 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+/* Стартовий фон для відео-блоку */
+.video-card {
+  background-color: #004080; /* швидкий синій фон */
+}
+
+/* Стартовий фон для мобільної версії */
+body {
+  background-color: #004080; /* легкий фон замість фото */
+}
+
+/* Підвантаження картинок лише коли потрібні */
+@media (min-width: 601px) {
+  .video-card {
+    background-image: url('sky.webp');
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    background-image: url('sky-mobile.webp');
+    background-size: cover;
+    background-position: center;
+  }
+}
