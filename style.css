@@ -327,6 +327,21 @@ nav a:hover,
   }
 }
 
+@media (max-width: 600px) {
+  header {
+    height: auto;
+    padding: 10px;
+  }
+  .hero {
+    padding: 20px;
+    text-align: center;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 
 
