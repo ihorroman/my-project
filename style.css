@@ -92,13 +92,30 @@ nav a.active,
 }
 
 /* Фон */
-.hero::before {
-  content: "";
+.hero {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+  min-height: calc(100vh - 253px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-bg {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: url("sumy.webp") center/cover no-repeat;
-  transition: transform 0.5s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* замінює background-size: cover */
   z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
 }
 
 .hero:hover::before {
@@ -237,6 +254,27 @@ img {
   height: auto;
 }
 
- 
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  transition: transform 0.5s ease;
+}
 
+.hero:hover .hero-bg {
+  transform: scale(1.05); /* тепер працює на <img> */
+}
 
+.logo-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* відстань між гербом і текстом */
+}
+
+.dropdown-content {
+  z-index: 9999; /* меню завжди поверх */
+}
