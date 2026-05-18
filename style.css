@@ -1,40 +1,44 @@
 /* Загальні стилі */
 html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  height: 100%;
-}
-
-body {
+  display: flex;
+  flex-direction: column;
   font-family: 'Merriweather', serif;
-  background: #f0f0f0;
   color: #333;
+  overflow-x: hidden; /* прибирає горизонтальний скрол */
 }
 
-/* Шапка */
+/* Фон для всіх сторінок */
+body {
+  background: url("sky1920.avif") no-repeat center center fixed;
+  background-size: cover;          /* фон завжди на весь екран */
+  background-attachment: fixed;    /* фон "приклеєний" */
+  min-height: 100vh;               /* завжди на висоту екрану */
+}
+
+/* Хедер */
 header {
   background: #004080;
   color: white;
   text-align: center;
   padding: 20px;
 }
-
 .logo-title {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px; /* відстань між гербом і текстом */
+  gap: 20px;
 }
-
 .logo {
   width: 80px;
   height: auto;
-  vertical-align: middle;
 }
-
 header h1 {
   font-family: 'Poppins', sans-serif;
   font-size: 2.2em;
+  margin: 0;
 }
 
 /* Меню */
@@ -44,7 +48,6 @@ nav {
   justify-content: center;
   padding: 10px;
 }
-
 nav a,
 nav span.menu-item {
   color: #f1f1f1;
@@ -56,17 +59,17 @@ nav span.menu-item {
   cursor: pointer;
   transition: color 0.3s, background-color 0.3s;
 }
-
 nav a:hover,
-nav a:focus,
-nav a:active,
-nav a.active,
 .menu-item:hover {
   color: #FFD700;
-  text-decoration: none;
 }
 
-/* Головний блок із фоном */
+/* Основний контент */
+main {
+  flex: 1; /* займає простір між хедером і футером */
+}
+
+/* Герой-секція */
 .hero {
   position: relative;
   overflow: hidden;
@@ -77,48 +80,45 @@ nav a.active,
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 253px);
+  min-height: 100%;
   box-sizing: border-box;
 }
-
 .hero h2 {
   font-family: 'Poppins', sans-serif;
-  font-size: 2.6em;
+  font-size: 2.4em;
 }
-
 .hero p {
   font-size: 1.2em;
 }
-
-/* Фон */
 .hero-bg {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0; /* фон видно */
+  z-index: 0;
   transition: transform 0.5s ease;
 }
-
 .hero-content {
   position: relative;
-  z-index: 1; /* текст поверх */
+  z-index: 1;
 }
-
 .hero:hover .hero-bg {
   transform: scale(1.05);
 }
 
 /* Футер */
 footer {
+  margin-top: auto;
   background: #004080;
   color: white;
   text-align: center;
-  padding: 16px;
+  padding: 20px;      /* збільшений внутрішній відступ */
+  min-height: 65px;  /* мінімальна висота футера */
   font-family: 'Poppins', sans-serif;
-  font-size: 0.90em;
-  line-height: 1.4;
+  font-size: 0.9em;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Відео-блок */
@@ -126,14 +126,13 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  padding: 29.5px;
   background-image: url('sky1920.avif');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  min-height: calc(100vh - 305px);
+  min-height: calc(100vh - 260px);
 }
-
 video {
   width: 700px;
   max-width: 90%;
@@ -142,8 +141,6 @@ video {
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
-
-/* Карта */
 .video-card iframe {
   width: 700px;
   height: 400px;
@@ -157,7 +154,6 @@ video {
   position: relative;
   display: inline-block;
 }
-
 .dropdown-content {
   display: none;
   position: absolute;
@@ -165,22 +161,18 @@ video {
   border-radius: 6px;
   min-width: 220px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  z-index: 9999; /* меню завжди поверх */
+  z-index: 9999;
 }
-
 .dropdown-content a {
   color: #f1f1f1;
   padding: 10px 14px;
   text-decoration: none;
   display: block;
-  transition: background-color 0.3s, color 0.3s;
 }
-
 .dropdown-content a:hover {
   background-color: #1e3c72;
   color: #FFD700;
 }
-
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -200,8 +192,11 @@ video {
   .logo {
     width: 80px;
   }
+  .block-inner {
+    flex-direction: column;
+    text-align: center;
+  }
 }
-
 @media (max-width: 600px) {
   header .logo-title {
     flex-direction: column;
@@ -209,7 +204,7 @@ video {
     text-align: center;
   }
   header {
-    padding: 10px;
+    padding: 15px;
   }
   .hero {
     min-height: 300px;
@@ -225,27 +220,48 @@ video {
   .hero p {
     font-size: 16px;
   }
-
-img {
-  max-width: 100%;
-  height: auto;
+  .block-inner img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
-/* Стартовий фон для відео-блоку */
-.video-card {
-  background-color: #004080; /* швидкий синій фон */
+/* Контент-блоки */
+.content-block {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 25px;
+  margin: 15px auto;
+  width: 85%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* Стартовий фон для мобільної версії */
-body {
-  background-color: #004080; /* легкий фон замість фото */
-}
 
-/* Підвантаження картинок лише коли потрібні */
-@media (min-width: 601px) {
-  .video-card {
-    background-image: url('sky1920.avif');
-    background-size: cover;
-    background-position: center;
+
+.block-inner {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.block-inner img {
+  max-width: 600px;
+  border: 3px solid #004080;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.block-inner p {
+  flex: 1;
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  line-height: 1.5;
+  color: #004080;
+}
+@media (max-width: 768px) {
+  .block-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .block-inner img {
+    max-width: 100%;
   }
 }
