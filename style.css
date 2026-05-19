@@ -309,3 +309,36 @@ video {
   line-height: 1.5;
   color: #004080;
 }
+
+
+.content-block ul {
+  max-height: 63vh;       /* висота блоку = 63% висоти екрану */
+  overflow-y: auto;       /* скрол тільки всередині списку */
+  padding-left: 20px;
+  padding-right: 0;       /* скрол ближче до краю */
+  margin: 0;
+}
+
+.content-block li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #004080;
+}
+
+.content-block li::before {
+  content: "■";           /* синій квадратний маркер */
+  color: blue;
+  position: absolute;
+  left: 0;
+}
+
+.content-block li {
+  font-size: 22px;       /* той самий розмір, що й у параграфах */
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+  color: #004080;
+}
