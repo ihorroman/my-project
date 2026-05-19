@@ -2,21 +2,43 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <title>Сумський обласний краєзнавчий музей</title>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <title>Мій сайт про Суми</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Підключення шрифтів -->
+  <link rel="preload" href="fonts/poppins.woff2" as="font" type="font/woff2" crossorigin>
+
   <link rel="stylesheet" href="style.css">
+
+  <!-- SEO базові -->
+  <meta name="description" content="Фото, відео та новини про місто Суми. Дізнайтесь більше про культуру та життя міста.">
+
+  <!-- Open Graph для соцмереж -->
+  <meta property="og:title" content="Мій сайт про Суми">
+  <meta property="og:description" content="Фото, відео та новини про місто Суми.">
+  <meta property="og:image" content="images/sumy-og.webp"> <!-- оптимізоване WebP -->
+  <meta property="og:url" content="https://mysite.com">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Мій сайт про Суми">
+  <meta name="twitter:description" content="Фото, відео та новини про місто Суми.">
+  <meta name="twitter:image" content="images/sumy-twitter.webp"> 
 </head>
 <body>
-  <!-- Шапка -->
+  <!-- Шапка з гербом -->
   <header>
     <div class="logo-title">
-      <h1>Сумський обласний краєзнавчий музей</h1>
+      <img src="gerb-sumy.webp" alt="Герб Сум" width="85" height="85">
+
+      <h1>Місто Суми</h1>
     </div>
   </header>
 
   <!-- Меню -->
   <nav>
-    <a href="index.html">Головна</a>
+    <a href="index.html" class="active">Головна</a>
     <a href="history.html">Історія міста</a>
 
     <div class="dropdown">
@@ -25,7 +47,7 @@
         <a href="altanka.html">Альтанка</a>
         <a href="sobor-spaso.html">Спасо-Преображенський собор</a>
         <a href="sobor-troickiy.html">Свято-Троїцький собор</a>
-        <a href="museum-kraeznav.html" class="active">Сумський обласний краєзнавчий музей</a>
+        <a href="museum-kraeznav.html">Сумський обласний краєзнавчий музей</a>
         <a href="sadko.html">Скульптурна композиція "Садко"</a>
       </div>
     </div>
@@ -35,15 +57,10 @@
     <a href="vsumah.html">В Сумах не сумують</a>
   </nav>
 
-  <!-- Основний блок -->
+    <!-- Головний блок -->
   <main>
-    <section class="video-card">
-      <img src="museum-kraeznav.jpg" alt="Сумський обласний краєзнавчий музей" class="place-photo">
-      <p>
-        Сумський обласний краєзнавчий музей — один із найстаріших музеїв України, 
-        заснований у XIX столітті. Тут зберігаються унікальні експонати, що розповідають 
-        про історію, природу та культуру Сумщини. Музей є важливим науковим і культурним центром міста.
-      </p>
+    <section class="hero">
+      <img src="sumy.avif" alt="Місто Суми" class="hero-bg">
     </section>
   </main>
 
