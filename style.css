@@ -265,3 +265,12 @@ video {
     max-width: 100%;
   }
 }
+.content-block img {
+  transition: transform 0.3s ease; /* плавність */
+}
+
+.content-block img:hover {
+  transform: scale(1.05); /* легке збільшення */
+}
+
+
