@@ -273,6 +273,43 @@ video {
   transform: scale(1.05); /* легке збільшення */
 }
 
+.content-block ul {
+  max-height: 400px;     /* висота блоку */
+  overflow-y: auto;      /* скрол тільки всередині списку */
+  padding-left: 20px;    /* відступ для маркерів */
+  margin: 0;
+}
+
+.content-block li {
+  margin-bottom: 10px;   /* відстань між пунктами */
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+.content-block ul {
+  list-style: none;       /* прибираємо стандартні крапки */
+  padding-left: 0;
+}
+
+.content-block li {
+  position: relative;
+  padding-left: 20px;     /* відступ для маркера */
+  margin-bottom: 10px;
+}
+
+.content-block li::before {
+  content: "■";           /* квадратний маркер */
+  color: blue;            /* синій колір */
+  position: absolute;
+  left: 0;
+}
+
+.content-block {
+  font-family: 'Poppins', sans-serif; /* єдиний шрифт для всього тексту в блоці */
+  font-size: 22px;
+  line-height: 1.5;
+  color: #004080;
+}
 
 
 
