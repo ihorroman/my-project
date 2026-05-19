@@ -230,13 +230,11 @@ video {
 .content-block {
   background-color: rgba(255, 255, 255, 0.95);
   padding: 25px;
-  margin: 15px auto;
+  margin: 10px auto;
   width: 85%;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
-
-
 
 .block-inner {
   display: flex;
@@ -265,6 +263,7 @@ video {
     max-width: 100%;
   }
 }
+
 .content-block img {
   transition: transform 0.3s ease; /* плавність */
 }
@@ -310,6 +309,3 @@ video {
   line-height: 1.5;
   color: #004080;
 }
-
-
-
